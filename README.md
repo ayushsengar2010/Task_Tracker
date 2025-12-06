@@ -1,8 +1,15 @@
 # 📋 Task Tracker - Full Stack Application
 
-A production-ready task management application featuring **Redux state management**, **fully responsive design**, and **JWT authentication**. Built as the solution for the **Brew Software Developer Internship Assignment**.
+A production-ready task management application featuring **Redux Toolkit state management**, **fully responsive design**, and **JWT authentication**.
 
-**Status**: ✅ Complete and Production Ready | **Last Updated**: December 6, 2025
+**Status**: ✅ Complete, Clean & Production Ready | **Last Updated**: December 6, 2025
+
+## 🚀 Quick Links
+
+- 📖 **[Quick Start Guide](QUICKSTART.md)** - Get running in 5 minutes
+- 🌐 **[Deployment Guide](DEPLOYMENT.md)** - Complete deployment instructions
+- 🧹 **[Cleanup Summary](CLEANUP-SUMMARY.md)** - What was optimized
+- 🔧 **[Backend API Docs](Backend/README.md)** - API endpoints reference
 
 ## 🎯 Project Overview
 
@@ -38,65 +45,71 @@ Task Tracker is a full-stack web application that allows users to:
 
 ```
 Task Tracker/
-├── Backend/
+├── 📚 Documentation/
+│   ├── README.md                    # This file - Project overview
+│   ├── DEPLOYMENT.md                # Complete deployment guide (450+ lines)
+│   ├── QUICKSTART.md                # 5-minute quick start
+│   └── CLEANUP-SUMMARY.md           # Project optimization report
+│
+├── 🖥️ Backend/
+│   ├── README.md                    # API documentation
 │   └── server/
-│       ├── index.js                 # Main server file (8 endpoints)
+│       ├── index.js                 # Main server (8 REST endpoints)
 │       ├── package.json             # Dependencies
-│       ├── .env                     # Environment variables
-│       ├── .env.example             # Example .env
-│       ├── README.md                # Backend API documentation
+│       ├── .env                     # Environment variables (not in git)
+│       ├── .env.example             # Environment template
 │       ├── models/
 │       │   ├── User.js              # User schema with validation
 │       │   └── Task.js              # Task schema with indexes
 │       └── middleware/
-│           └── auth.js              # JWT validation middleware
+│           └── auth.js              # JWT authentication middleware
 │
-├── Frontend/
-│   └── client/
-│       ├── package.json             # Dependencies (includes Redux)
-│       ├── .env.local               # Environment variables
-│       ├── .env.example             # Example .env
-│       ├── README.md                # Frontend documentation
-│       ├── next.config.mjs          # Next.js config
-│       ├── postcss.config.mjs       # Tailwind CSS config
-│       └── src/
-│           ├── redux/               # ⭐ NEW: Redux state management
-│           │   ├── store.js         # Redux store config
-│           │   └── slices/
-│           │       ├── authSlice.js # Auth state & thunks
-│           │       └── tasksSlice.js # Tasks state & thunks
-│           ├── app/
-│           │   ├── layout.js        # Root layout + Redux Provider
-│           │   ├── page.js          # Login/Register (Redux + Responsive)
-│           │   ├── globals.css      # Global styles
-│           │   └── dashboard/
-│           │       └── page.js      # Dashboard (Redux + Responsive)
-│           ├── components/
-│           │   └── shared.jsx       # 7 Reusable UI components
-│           ├── context/
-│           │   └── AuthContext.js   # Auth context (legacy support)
-│           └── utils/
-│               ├── api.js           # Axios config with interceptors
-│               └── helpers.js       # 10+ utility functions
-│
-├── REDUX_MIGRATION.md               # Redux architecture documentation
-├── SETUP.md                         # Detailed setup guide
-├── SUBMISSION.md                    # Completion summary
-├── QUICK_START.md                   # Quick reference
-└── README.md                        # This file
+└── 💻 Frontend/
+    └── client/
+        ├── README.md                # Frontend documentation
+        ├── package.json             # Dependencies (Redux 2.11.0 ✨)
+        ├── .env.local               # Environment variables (not in git)
+        ├── .env.example             # Environment template
+        ├── next.config.mjs          # Next.js 16 configuration
+        ├── postcss.config.mjs       # Tailwind CSS 4 config
+        └── src/
+            ├── redux/               # ⭐ Redux Toolkit State Management
+            │   ├── store.js         # Store configuration
+            │   └── slices/
+            │       ├── authSlice.js # Auth state & async thunks
+            │       └── tasksSlice.js# Tasks state & async thunks
+            ├── app/
+            │   ├── layout.js        # Root layout with Redux Provider
+            │   ├── client-layout.js # Client-side layout wrapper
+            │   ├── page.js          # Login/Register page
+            │   ├── globals.css      # Global styles
+            │   └── dashboard/
+            │       └── page.js      # Main dashboard with task management
+            ├── components/
+            │   └── shared.jsx       # Reusable UI components
+            ├── context/
+            │   └── AuthContext.js   # Authentication context
+            └── utils/
+                ├── api.js           # Axios configuration with interceptors
+                └── helpers.js       # Utility functions
 ```
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Node.js v14+ and npm
-- MongoDB (local or Atlas)
-- Git
+> 📖 **Detailed guides available**: See [QUICKSTART.md](QUICKSTART.md) for 5-min setup or [DEPLOYMENT.md](DEPLOYMENT.md) for production deployment.
 
-### Step 1: Clone and Setup Backend
+### Prerequisites
+- Node.js v20+ and npm
+- MongoDB (local or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) - free tier)
+
+### Step 1: Setup Backend
 
 ```bash
 cd Backend/server
+npm install
+cp .env.example .env
+# Edit .env with your MongoDB URI and JWT secret
+npm start  # Runs on http://localhost:5000
 
 # Install dependencies
 npm install

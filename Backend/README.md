@@ -1,78 +1,115 @@
-# Task Tracker - Backend Server
+# 🖥️ Task Tracker - Backend Server
 
-A robust Node.js/Express REST API for managing tasks with user authentication and database persistence.
+A robust Node.js/Express REST API for managing tasks with JWT authentication and MongoDB persistence.
 
-## Features
+**Status**: ✅ Production Ready | **Port**: 5000 | **Endpoints**: 8
+
+> 📖 **Need deployment help?** See [../DEPLOYMENT.md](../DEPLOYMENT.md) for complete deployment guides.
+
+## 🎯 Features
 
 ✅ **User Authentication**
 - User registration with email validation
-- Secure login with JWT tokens
-- Password hashing with bcryptjs
-- Token expiration (7 days)
+- Secure login with JWT tokens (7-day expiration)
+- Password hashing with bcryptjs (10 salt rounds)
+- Token verification middleware
 
 ✅ **Task Management**
-- Create, Read, Update, Delete (CRUD) operations
+- Full CRUD operations for tasks
 - Task filtering and sorting
-- Priority levels (low, medium, high)
-- Task statuses (todo, in-progress, done)
-- Due date tracking
-- Task statistics/summaries
+- Priority levels: low, medium, high
+- Status tracking: todo, in-progress, done
+- Due date management
+- Task statistics and summaries
+- User-specific task isolation
 
 ✅ **Security**
 - JWT authentication middleware
 - Input validation and sanitization
-- CORS support
-- Error handling
+- CORS configuration
+- Error handling and logging
+- Environment-based configuration
 
 ✅ **Database**
 - MongoDB with Mongoose ODM
-- User-specific task isolation
-- Database indexing for performance
+- Indexed fields for performance
+- Schema validation
+- Timestamps on all documents
 
-## Prerequisites
+## 📋 Prerequisites
 
-- Node.js (v14 or higher)
-- MongoDB (local or cloud instance)
+- Node.js v20+ (recommended)
+- MongoDB (local or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
 - npm or yarn
 
-## Installation
+## 🚀 Installation & Setup
 
-1. **Clone and navigate to backend**
-   ```bash
-   cd Backend/server
-   ```
+### 1. Navigate to backend directory
+```bash
+cd Backend/server
+```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+### 2. Install dependencies
+```bash
+npm install
+```
 
-3. **Configure environment variables**
-   ```bash
-   cp .env.example .env
-   ```
-   
-   Edit `.env` file:
-   ```
-   MONGO_URI=mongodb://localhost:27017/tasktracker
-   JWT_SECRET=your-secret-key-here
-   PORT=5000
-   NODE_ENV=development
-   ```
+**Dependencies installed**:
+- `express` 5.2.1 - Web framework
+- `mongoose` 9.0.1 - MongoDB ODM
+- `jsonwebtoken` 9.0.3 - JWT authentication
+- `bcryptjs` 3.0.3 - Password hashing
+- `cors` 2.8.5 - CORS middleware
+- `dotenv` 17.2.3 - Environment variables
 
-4. **Start MongoDB** (if running locally)
-   ```bash
-   mongod
-   ```
+### 3. Configure environment variables
+```bash
+cp .env.example .env
+```
 
-5. **Start the server**
-   ```bash
-   npm start
-   # or for development with auto-reload
-   npm run dev
-   ```
+Edit `.env` file:
+```env
+MONG_URI=mongodb://localhost:27017/tasktracker
+# For MongoDB Atlas:
+# MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/tasktracker
 
-   Server will run on `http://localhost:5000`
+JWT_SECRET=your_super_secure_random_string_64_characters_minimum
+CLIENT_URL=http://localhost:3000
+PORT=5000
+NODE_ENV=development
+```
+
+> ⚠️ **Security**: Generate a strong JWT_SECRET using: `node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"`
+
+### 4. Start MongoDB
+
+**Option A - Local MongoDB**:
+```bash
+# Windows
+net start MongoDB
+
+# macOS/Linux
+mongod
+```
+
+**Option B - MongoDB Atlas** (Recommended):
+1. Create free cluster at https://www.mongodb.com/cloud/atlas
+2. Get connection string
+3. Update `MONGO_URI` in `.env`
+
+### 5. Start the server
+```bash
+npm start
+```
+
+✅ Server runs on: **http://localhost:5000**
+
+You should see:
+```
+✓ Server running on http://localhost:5000
+✓ Environment: development
+✓ MongoDB Connected
+```
 
 ## API Endpoints
 
