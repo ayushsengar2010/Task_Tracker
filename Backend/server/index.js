@@ -17,9 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS Configuration - Allow multiple origins
 const allowedOrigins = [
-  'http://localhost:3000',
-  process.env.CLIENT_URL,
-  'https://task-tracker-tau-sandy.vercel.app', // Add your Vercel URL here
+  process.env.CLIENT_URL, // Set this in Render: https://task-tracker1-xa20.onrender.com
+  process.env.CLIENT_URL_2, // Optional: for additional frontend URLs
 ].filter(Boolean);
 
 app.use(cors({
