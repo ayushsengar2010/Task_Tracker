@@ -2,15 +2,6 @@
 
 A production-ready task management application featuring **Redux Toolkit state management**, **fully responsive design**, and **JWT authentication**.
 
-**Status**: ✅ Complete, Clean & Production Ready | **Last Updated**: December 6, 2025
-
-## 🚀 Quick Links
-
-- 📖 **[Quick Start Guide](QUICKSTART.md)** - Get running in 5 minutes
-- 🌐 **[Deployment Guide](DEPLOYMENT.md)** - Complete deployment instructions
-- 🧹 **[Cleanup Summary](CLEANUP-SUMMARY.md)** - What was optimized
-- 🔧 **[Backend API Docs](Backend/README.md)** - API endpoints reference
-
 ## 🎯 Project Overview
 
 Task Tracker is a full-stack web application that allows users to:
@@ -93,10 +84,6 @@ Task Tracker/
                 ├── api.js           # Axios configuration with interceptors
                 └── helpers.js       # Utility functions
 ```
-
-## 🚀 Quick Start
-
-> 📖 **Detailed guides available**: See [QUICKSTART.md](QUICKSTART.md) for 5-min setup or [DEPLOYMENT.md](DEPLOYMENT.md) for production deployment.
 
 ### Prerequisites
 - Node.js v20+ and npm
@@ -507,9 +494,3 @@ If you encounter issues:
 This project is created as part of the Brew Software Developer Internship Assignment.
 
 ---
-
-**Happy Coding! 🚀**
-
-For detailed setup instructions, see:
-- [Backend Setup](Backend/README.md)
-- [Frontend Setup](Frontend/client/README.md)
