@@ -2,10 +2,6 @@
 
 A robust Node.js/Express REST API for managing tasks with JWT authentication and MongoDB persistence.
 
-**Status**: ✅ Production Ready | **Port**: 5000 | **Endpoints**: 8
-
-> 📖 **Need deployment help?** See [../DEPLOYMENT.md](../DEPLOYMENT.md) for complete deployment guides.
-
 ## 🎯 Features
 
 ✅ **User Authentication**
@@ -435,8 +431,7 @@ NODE_ENV=production
 ```
 
 ### Recommended Hosting
-- **Heroku**, **Railway**, **Render** - Easy Node.js deployment
-- **AWS EC2**, **DigitalOcean** - More control
+- **Render** - Easy Node.js deployment
 - **MongoDB Atlas** - Cloud MongoDB hosting
 
 ## Performance Optimization
