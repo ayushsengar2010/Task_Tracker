@@ -2,10 +2,6 @@
 
 A modern Next.js application with **Redux Toolkit state management**, responsive design, and seamless authentication.
 
-**Status**: ✅ Production Ready | **Port**: 3000 | **Framework**: Next.js 16
-
-> 📖 **Need deployment help?** See [../../DEPLOYMENT.md](../../DEPLOYMENT.md) for complete deployment guides.
-
 ## 🎯 Features
 
 ✅ **Authentication**
